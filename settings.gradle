@@ -1,0 +1,7 @@
+include ':shanyan'
+include ':meiqia'
+include ':app'
+rootProject.name = "ASMTools"
+include ':funcost'
+include ':classcost'
+include ':memory'

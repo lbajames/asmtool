@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.duwo.meiqia'
+//apply plugin: 'com.duwo.shanyan'
+//apply plugin: 'com.duwo.funcost'
+//apply plugin: 'com.duwo.classcost'
+apply plugin: 'com.duwo.memory'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.duwo.asmtools"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+//class_cost_filter {
+//    classList "asmtools"
+//}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.meiqia:meiqiasdk:3.6.6@aar'
+    api 'com.xckj:shanyan:2.3.1.6@aar'
+}
+
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
